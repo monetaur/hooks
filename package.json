@@ -1,0 +1,38 @@
+{
+  "name": "@monetaur/hooks",
+  "version": "1.0.0",
+  "description": "A collection of useful React hooks",
+  "main": "dist/index.js",
+  "module": "lib/index.js",
+  "scripts": {
+    "build": "rollup -c",
+    "clean": "rm -rf lib && rm -rf dist",
+    "lint": "eslint --ext .jsx --ext .js src",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/monetaur/hooks.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/monetaur/hooks/issues"
+  },
+  "homepage": "https://github.com/monetaur/hooks#readme",
+  "dependencies": {
+    "rollup": "^1.29.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.19.1",
+    "eslint-plugin-react-hooks": "^2.3.0",
+    "husky": "^4.0.3",
+    "react": "^16.12.0"
+  },
+  "peerDependencies": {
+    "react": ">= 16.8"
+  }
+}
