@@ -28,14 +28,15 @@ function setProp(obj, key, value) {
   return obj;
 }
 
-function reducer(oldState, key, value) {
+function reducer(oldState, action) {
   const newState = { ...oldState };
-  setProp(newState, key, value);
+  setProp(newState, action.key, action.value);
   return newState;
 }
 
 export default function useDeepState(init) {
   const initialValue = typeof init === 'function' ? undefined : init;
   const initialValueFn = typeof init === 'function' ? init : undefined;
-  return useReducer(reducer, initialValue, initialValueFn);
+  const [value, dispatch] = useReducer(reducer, initialValue, initialValueFn);
+  return [value, (k, v) => dispatch({ key: k, value: v })];
 }
