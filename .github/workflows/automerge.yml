@@ -1,4 +1,4 @@
-name: Automerge release bump PR
+name: Automerge Release PR
 
 on: pull_request
 
