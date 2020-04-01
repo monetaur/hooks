@@ -1,25 +1,30 @@
 name: Automerge Release PR
 
-on: pull_request
+  on:
+    pull_request:
+
+    check_suite:
+      types:
+        - completed
 
 jobs:
 
   autoapprove:
     runs-on: ubuntu-latest
+    if: github.actor == 'monetaur-bot'
     steps:
       - name: Autoapproving
         uses: hmarr/auto-approve-action@v2.0.0
-        if: github.actor == 'monetaur-bot'
         with:
           github-token: "${{ secrets.GITHUB_TOKEN }}"
 
   automerge:
     needs: [autoapprove]
     runs-on: ubuntu-latest
+    if: github.actor == 'monetaur-bot'
     steps:
       - name: Automerging
         uses: pascalgn/automerge-action@v0.7.5
-        if: github.actor == 'monetaur-bot'
         env:
           GITHUB_TOKEN: "${{ secrets.GH_TOKEN }}"
           GITHUB_LOGIN: monetaur-bot
