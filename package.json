@@ -7,7 +7,6 @@
   "scripts": {
     "build": "rollup -c",
     "clean": "rm -rf lib && rm -rf dist",
-    "get-version": "echo $npm_package_version",
     "lint": "eslint --ext .jsx --ext .js src",
     "release": "semantic-release",
     "test": "jest"
@@ -24,6 +23,8 @@
   "homepage": "https://github.com/monetaur/hooks#readme",
   "devDependencies": {
     "@babel/preset-env": "^7.7.7",
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/git": "^9.0.0",
     "@testing-library/react-hooks": "^3.2.1",
     "babel-eslint": "^10.0.3",
     "babel-jest": "^24.9.0",
