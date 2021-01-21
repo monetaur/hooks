@@ -1,7 +1,8 @@
 import { useState, useCallback, useEffect } from 'react';
 
-export default function useIntersection(ref) {
+export default function useIntersection(ref, options = {}) {
   const [hasIntersected, setHasIntersected] = useState(false);
+  const { root, rootMargin, threshold } = options;
 
   const handler = useCallback((changes) => {
     changes.forEach((change) => {
@@ -15,7 +16,11 @@ export default function useIntersection(ref) {
     const el = ref.current;
 
     if (el && typeof IntersectionObserver !== 'undefined') {
-      const observer = new IntersectionObserver(handler);
+      const observer = new IntersectionObserver(handler, {
+        root,
+        rootMargin,
+        threshold,
+      });
       observer.observe(el);
 
       return () => {
@@ -24,7 +29,7 @@ export default function useIntersection(ref) {
     }
 
     return undefined;
-  }, [handler, ref]);
+  }, [handler, ref, root, rootMargin, threshold]);
 
   return [hasIntersected, setHasIntersected];
 }
