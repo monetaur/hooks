@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/monetaur/hooks/compare/v1.1.1...v1.1.2) (2021-01-21)
+
+
+### Bug Fixes
+
+* Pass through IntersectionObserver options ([ac39cfe](https://github.com/monetaur/hooks/commit/ac39cfe5eff94a327b1910fdb9a21a12a7613312))
+
 ## [1.1.1](https://github.com/monetaur/hooks/compare/v1.1.0...v1.1.1) (2020-10-01)
 
 
