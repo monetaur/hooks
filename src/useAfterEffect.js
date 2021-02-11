@@ -1,15 +1,12 @@
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useRef } from 'react';
 
-export default function useAfterEffect(fn, dependencies) {
-  const [isInitialRender, setIsInitialRender] = useState(true);
+export default function useAfterEffect(fn, dependencies = []) {
+  const count = useRef(0);
 
-  const effect = useCallback(() => {
-    if (isInitialRender) {
-      setIsInitialRender(false);
-    } else {
+  return useEffect(() => {
+    if (count.current) {
       fn();
     }
-  }, [fn, isInitialRender]);
-
-  return useEffect(effect, dependencies);
+    count.current += 1;
+  }, dependencies);
 }

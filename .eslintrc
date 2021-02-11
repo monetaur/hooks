@@ -6,10 +6,11 @@
     "jest": true
   },
   "extends": [
-    "airbnb-base"
+    "eslint:recommended",
+    "plugin:react-hooks/recommended"
   ],
   "parser": "babel-eslint",
-  "plugins": [
-    "react-hooks"
-  ]
+  "rules": {
+    "comma-dangle": ["error", "always-multiline"]
+  }
 }
