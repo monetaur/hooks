@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/monetaur/hooks/compare/v1.1.2...v1.1.3) (2021-02-11)
+
+
+### Bug Fixes
+
+* Handle server execution of useLocalStorage ([f8de1c0](https://github.com/monetaur/hooks/commit/f8de1c096e910bf99e92e607f1bb3ad7595e02be))
+
 ## [1.1.2](https://github.com/monetaur/hooks/compare/v1.1.1...v1.1.2) (2021-01-21)
 
 
