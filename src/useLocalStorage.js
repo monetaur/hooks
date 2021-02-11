@@ -1,8 +1,15 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 
 export default function useLocalStorage(key, { json = false } = {}) {
+  // Mock out localStorage global if executed on server
+  const store = useMemo(() => localStorage || {
+    getItem: () => null,
+    setItem: () => {},
+    removeItem: () => {},
+  }, []);
+
   const [value, setValue] = useState(() => {
-    const rawValue = localStorage.getItem(key);
+    const rawValue = store.getItem(key);
     return json ? JSON.parse(rawValue) : rawValue;
   });
 
@@ -10,11 +17,11 @@ export default function useLocalStorage(key, { json = false } = {}) {
     setValue(newValue);
 
     if (newValue === null) {
-      localStorage.removeItem(key);
+      store.removeItem(key);
     } else {
-      localStorage.setItem(key, json ? JSON.stringify(newValue) : newValue);
+      store.setItem(key, json ? JSON.stringify(newValue) : newValue);
     }
-  }, [key]);
+  }, [key, json, store]);
 
   return [value, updateValue];
 }
