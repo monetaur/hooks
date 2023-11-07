@@ -4,6 +4,10 @@
   "description": "A collection of useful React hooks",
   "main": "dist/index.js",
   "module": "lib/index.js",
+  "files": [
+    "dist",
+    "lib"
+  ],
   "scripts": {
     "build": "rollup -c",
     "clean": "rm -rf lib && rm -rf dist",
