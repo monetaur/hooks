@@ -1,3 +1,10 @@
+## [1.1.4](https://github.com/monetaur/hooks/compare/v1.1.3...v1.1.4) (2023-11-13)
+
+
+### Bug Fixes
+
+* Add files array to package.json ([d84aa46](https://github.com/monetaur/hooks/commit/d84aa4623e68ae14fca2f7dc1642e6e63ca6eb90))
+
 ## [1.1.3](https://github.com/monetaur/hooks/compare/v1.1.2...v1.1.3) (2021-02-11)
 
 
